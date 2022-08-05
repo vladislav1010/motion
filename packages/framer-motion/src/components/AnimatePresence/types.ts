@@ -77,6 +77,7 @@ export interface AnimatePresenceProps {
 // именно на понимание и перенимать принципы и техники:
 // Develop our own principles through practice
 // We figure out the principles guiding their success.
+// Со временем понимание области кода должно быть точным, но по началу, т.к. ты только изучаешь React.JS, не обязано быть таковым.
 
 // Когда будет понимание какой-нибудь области кода, не обязательно большой, будут еще 2 упражнения:
 // 1. Find the code that needs to be changed
