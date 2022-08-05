@@ -29,15 +29,24 @@ export const useRender: RenderComponent<
      * If !isStatic, render motion values as props on initial render
      */
 
-    return createElement<any>(Component, {
+    // Использовать createElement<any>
+    // тип элемента - в переменной Component
+    // props:
+
+    /*
+    {
         ref,
         ...filterProps(props, false, false),
         ...visualProps,
         onUpdate: props.onInstanceUpdate,
         ...useHover(isStatic, props, visualElement),
         ...useTap(isStatic, props, visualElement),
-    } as any)
+    } as any
+    */
+    // Вернуть это выражение
+    return
 }
+// Кратко просмотри код, перейди по вызовам функций useTap, /packages/framer-motion/src/render/dom/utils/filter-props.ts:40
 
 function useVisualProps(props: ThreeMotionProps & MeshProps) {
     return useMemo(() => {

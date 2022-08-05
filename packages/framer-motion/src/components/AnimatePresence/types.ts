@@ -61,3 +61,23 @@ export interface AnimatePresenceProps {
      */
     presenceAffectsLayout?: boolean
 }
+
+// Extra 1.
+// Детально solidbook стр. 136 - 137. с "Ask: What does my code do?"
+
+// Попробовать понять поведение useRender, *читая* только код и комментарии
+// Начать с useRender и опускаться вглубь по вызовам функций.
+// И обратить внимание на то, что помогает понять, что код делает.
+// 1. types.ts
+// 2. index.tsx
+// …
+
+// Это не должно отнять много времени сейчас, но за малый срок ты не достигнешь полной отдачи от этого упражнения.
+// Нужно продолжать читать эту базу кода
+// именно на понимание и перенимать принципы и техники:
+// Develop our own principles through practice
+// We figure out the principles guiding their success.
+
+// Когда будет понимание какой-нибудь области кода, не обязательно большой, будут еще 2 упражнения:
+// 1. Find the code that needs to be changed
+// 2. Change this code without introducing bugs
