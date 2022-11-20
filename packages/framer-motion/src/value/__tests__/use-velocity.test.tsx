@@ -32,7 +32,9 @@ const syncDriver =
         }
     }
 
+// $2 name of sut
 describe("useVelocity", () => {
+    // ?.6 Не понял
     test("creates a motion value that updates with the velocity of the provided motion value", async () => {
         const output: number[] = []
         const outputVelocity: number[] = []
@@ -40,6 +42,7 @@ describe("useVelocity", () => {
 
         const promise = new Promise((resolve) => {
             const Component = () => {
+                // ?.6 Не понял
                 const x = useMotionValue(0)
                 const xVelocity = useVelocity(x)
                 const xAcceleration = useVelocity(xVelocity)

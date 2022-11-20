@@ -16,6 +16,7 @@ export function useVelocity(value: MotionValue<number>): MotionValue<number> {
     const velocity = useMotionValue(value.getVelocity())
 
     useEffect(() => {
+      // ?.3
         return value.velocityUpdateSubscribers.add((newVelocity) => {
             velocity.set(newVelocity)
         })

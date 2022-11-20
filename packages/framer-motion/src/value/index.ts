@@ -33,6 +33,7 @@ export class MotionValue<V = any> {
     version = "__VERSION__"
 
     /**
+     * // ?.1 "state of the `MotionValue`"
      * The current state of the `MotionValue`.
      *
      * @internal
@@ -111,6 +112,7 @@ export class MotionValue<V = any> {
     private canTrackVelocity = false
 
     /**
+     * // ?.1 "initiating value" - value or its state? Ctrl+F, "state"
      * @param init - The initiating value
      * @param config - Optional configuration options
      *
@@ -124,10 +126,12 @@ export class MotionValue<V = any> {
     }
 
     /**
+     * // $4
      * Adds a function that will be notified when the `MotionValue` is updated.
      *
      * It returns a function that, when called, will cancel the subscription.
      *
+     * // $4 Не по коду, обучение
      * When calling `onChange` inside a React component, it should be wrapped with the
      * `useEffect` hook. As it returns an unsubscribe function, this should be returned
      * from the `useEffect` function to ensure you don't add duplicate subscribers..
@@ -203,6 +207,7 @@ export class MotionValue<V = any> {
     }
 
     /**
+     * // $4 Только здесь "update". Не используется в этом модуле
      * Sets the state of the `MotionValue`.
      *
      * @remarks
@@ -225,10 +230,12 @@ export class MotionValue<V = any> {
         }
     }
 
+    // $4 "`MotionValue` is updated"
     updateAndNotify = (v: V, render = true) => {
         this.prev = this.current
         this.current = v
 
+        // ?.2 delta
         // Update timestamp
         const { delta, timestamp } = getFrameData()
         if (this.lastUpdated !== timestamp) {
@@ -244,6 +251,7 @@ export class MotionValue<V = any> {
 
         // Update velocity subscribers
         if (this.velocityUpdateSubscribers.getSize()) {
+            // ?.2 Все равно не понятно
             this.velocityUpdateSubscribers.notify(this.getVelocity())
         }
 
@@ -272,6 +280,7 @@ export class MotionValue<V = any> {
     }
 
     /**
+     * // ?.1 velocity
      * Returns the latest velocity of `MotionValue`
      *
      * @returns - The latest velocity of `MotionValue`. Returns `0` if the state is non-numerical.
@@ -285,6 +294,7 @@ export class MotionValue<V = any> {
               velocityPerSecond(
                   parseFloat(this.current as any) -
                       parseFloat(this.prev as any),
+                  // ?.2 timeDelta
                   this.timeDelta
               )
             : 0

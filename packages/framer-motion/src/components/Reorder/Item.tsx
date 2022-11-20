@@ -32,6 +32,8 @@ export interface Props<V> {
      */
     value: V
 
+    // ? - while reading
+    // ?.0 layout
     /**
      * A subset of layout options primarily used to disable layout="size"
      *
@@ -39,6 +41,7 @@ export interface Props<V> {
      * @default true
      */
     layout?: true | "position"
+    // /?
 }
 
 function useDefaultMotionValue(value: any, defaultValue: number = 0) {
