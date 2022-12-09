@@ -43,7 +43,12 @@ function onlyElements(children: ReactNode): ReactElement<any>[] {
     return filtered
 }
 
+// $5.1
+// Software engineering at Google (SEAG) -> Documentation -> Reference Documentation
 /**
+ * // Это обобщает всю документацию к функции
+ * // Types of Audiences -> "It’s also useful to identify when a doc is not appropriate for an audience. …"
+ * // "An API might need to provide complete and accurate reference information for any users of that API"
  * `AnimatePresence` enables the animation of components that have been removed from the tree.
  *
  * When adding/removing more than a single child, every child **must** be given a unique `key` prop.
@@ -68,14 +73,19 @@ function onlyElements(children: ReactNode): ReactElement<any>[] {
  * )
  * ```
  *
+ * // note: this belongs to another area of code, but is stated here.
  * You can sequence exit animations throughout a tree using variants.
  *
+ * // connection between concepts. About motion components a reader can read elsewhere
  * If a child contains multiple `motion` components with `exit` props, it will only unmount the child
+ * // related to this module (components/AnimatePresence)
  * once all `motion` components have finished animating out. Likewise, any components using
  * `usePresence` all need to call `safeToRemove`.
  *
+ * // note: each paragrap is logically atomic
  * @public
  */
+// /$5
 export const AnimatePresence: React.FunctionComponent<
     React.PropsWithChildren<AnimatePresenceProps>
 > = ({

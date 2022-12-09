@@ -50,6 +50,9 @@ export const PresenceChild = ({
                 return () => presenceChildren.delete(childId)
             },
         }),
+        // $5.4
+        // SEAG -> Documentation
+        // Reader must know the domain
         /**
          * If the presence of a child affects the layout of the components around it,
          * we want to make a new context value to ensure they get re-rendered

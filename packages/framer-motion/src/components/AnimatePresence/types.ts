@@ -1,8 +1,13 @@
 /**
  * @public
  */
+// $5.7
+// "An API might need to provide complete and accurate reference information for any users of that API"
 export interface AnimatePresenceProps {
+  // $5.2  
+  // Software engineering at Google -> Documentation
     /**
+     * // The purpose of the prop
      * By passing `initial={false}`, `AnimatePresence` will disable any initial animations on children
      * that are present when the component is first rendered.
      *
@@ -21,6 +26,7 @@ export interface AnimatePresenceProps {
      *
      * @public
      */
+    // /$5
     initial?: boolean
 
     /**
@@ -70,9 +76,11 @@ export interface AnimatePresenceProps {
      */
     mode?: "sync" | "popLayout" | "wait"
 
+    // $5.3
     /**
      * Internal. Used in Framer to flag that sibling children *shouldn't* re-render as a result of a
      * child being removed.
      */
+    // /$5
     presenceAffectsLayout?: boolean
 }

@@ -12,6 +12,9 @@ type Present = [true]
 
 type NotPresent = [false, SafeToRemove]
 
+// $5.6
+// SEAG -> Documentation
+// "An API might need to provide complete and accurate reference information for any users of that API"
 /**
  * When a component is the child of `AnimatePresence`, it can use `usePresence`
  * to access information about whether it's still present in the React tree.
@@ -35,6 +38,7 @@ type NotPresent = [false, SafeToRemove]
  *
  * @public
  */
+// /$5.6
 export function usePresence(): AlwaysPresent | Present | NotPresent {
     const context = useContext(PresenceContext)
 

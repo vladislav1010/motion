@@ -2,6 +2,10 @@ import { useRef } from "react"
 
 type Init<T> = () => T
 
+// $5.5
+// SEAG
+// API comments don't need to discuss implementation details or design decisions
+// We identitifed 2 major… of a file header
 /**
  * Creates a constant value over the lifecycle of a component.
  *
@@ -9,6 +13,7 @@ type Init<T> = () => T
  * a guarantee that it won't re-run for performance reasons later on. By using `useConstant`
  * you can ensure that initialisers don't execute twice or more.
  */
+// /$5
 export function useConstant<T>(init: Init<T>) {
     const ref = useRef<T | null>(null)
 

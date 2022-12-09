@@ -19,6 +19,7 @@ interface MeasureProps extends Props {
 }
 
 /**
+ * // $5 Почему
  * Measurement functionality has to be within a separate component
  * to leverage snapshot lifecycle.
  */
@@ -56,15 +57,23 @@ export function PopChild({ children, isPresent }: Props) {
         left: 0,
     })
 
+    // $5 documentation
+    // Software engineering at Google -> Documentation -> Types of Audiences
+    // "Purpose…"
+    // "provider (e.g., a member of the project team)…"
+    // solidbook
     /**
+     * // Кратко, почему
      * We create and inject a style block so we can apply this explicit
      * sizing in a non-destructive manner by just deleting the style block.
      *
+     * // Детали, почему
      * We can't apply size via render as the measurement happens
      * in getSnapshotBeforeUpdate (post-render), likewise if we apply the
      * styles directly on the DOM node, we might be overwriting
      * styles set via the style prop.
      */
+    // /$5
     useInsertionEffect(() => {
         const { width, height, top, left } = size.current
         if (isPresent || !ref.current || !width || !height) return
